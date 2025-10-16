@@ -9,4 +9,5 @@ public enum UserRole {
     ROLE_BRANCH_ADMIN,
     ROLE_BRANCH_CASHIER,
     ROLE_CUSTOMER
+
 }

@@ -28,5 +28,6 @@ public class CustomUserImplamantation implements UserDetailsService {
         Collection<? extends  GrantedAuthority> authorities = Collections.singletonList(authority);
 
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),authorities);
+
     }
 }
