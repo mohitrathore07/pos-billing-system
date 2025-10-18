@@ -3,6 +3,7 @@ package com.pos.system.configuration;
 import jakarta.servlet.http.HttpServletRequest;
 import org.hibernate.annotations.ConcreteProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -16,8 +17,9 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
-@ConcreteProxy
+@Configuration
 public class SecurityConfig {
 
     @Bean
@@ -26,6 +28,7 @@ public class SecurityConfig {
         return httpSecurity.sessionManagement(management ->
                 management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                         .authorizeHttpRequests(Authorize -> Authorize
+                                .requestMatchers("/auth/signup", "/auth/login").permitAll()
                                 .requestMatchers("/api/**").authenticated()
                                 .requestMatchers("api/super-admin/**").hasRole("ADMIN")
                                 .anyRequest().permitAll()
@@ -52,10 +55,10 @@ public class SecurityConfig {
                         "http://localhost:3000",
                         "http://localhost:5173"
                 ));
-                cors.setAllowedMethods(Collections.singletonList("*"));
+                cors.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                 cors.setAllowCredentials(true);
                 cors.setAllowedHeaders(Collections.singletonList("*"));
-                cors.setExposedHeaders(Arrays.asList("Authorization"));
+                cors.setExposedHeaders(List.of("Authorization"));
                 cors.setMaxAge(3600L);
                 return cors;
             }
