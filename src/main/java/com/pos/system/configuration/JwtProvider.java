@@ -1,5 +1,6 @@
 package com.pos.system.configuration;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.Authentication;
@@ -35,6 +36,13 @@ public class JwtProvider {
             auths.add(authority.getAuthority());
         }
         return String.join(",", auths);
+    }
 
+    public String getEmailFromToken(String jwt) {
+        jwt = jwt.substring(7);
+        Claims claims = Jwts.parser().verifyWith(key).build().parseSignedClaims(jwt).getPayload();
+
+        String email = String.valueOf(claims.get("email"));
+        return email;
     }
 }

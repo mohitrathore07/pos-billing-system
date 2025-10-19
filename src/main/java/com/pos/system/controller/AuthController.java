@@ -24,7 +24,7 @@ public class AuthController {
     private  final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
-    private final CustomUserImplamantation userImplamantation;
+    private final CustomUserImplamantation customUserImplamantation;
     private final AuthService authService;
 
     @PostMapping("/signup")
