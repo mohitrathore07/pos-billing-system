@@ -1,6 +1,6 @@
 package com.pos.system.service;
 
-import com.pos.exceptions.UserException;
+import com.pos.system.exceptions.UserException;
 import com.pos.system.Modal.User;
 
 import java.util.List;

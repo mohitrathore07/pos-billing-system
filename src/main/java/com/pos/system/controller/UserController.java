@@ -1,6 +1,6 @@
 package com.pos.system.controller;
 
-import com.pos.exceptions.UserException;
+import com.pos.system.exceptions.UserException;
 import com.pos.system.Modal.User;
 import com.pos.system.mapper.UserMapper;
 import com.pos.system.payload.dto.UserDto;

@@ -1,7 +1,6 @@
 package com.pos.system.Modal;
 
 import com.pos.system.domain.UserRole;
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -33,6 +32,9 @@ public class User {
     @NotBlank(message = "email is mandatory")
     @Email(message = "Email should be valid")
     private String email;
+
+    @ManyToOne
+    private Store store;
 
     private String phone;
 

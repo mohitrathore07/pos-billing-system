@@ -1,12 +1,11 @@
 package com.pos.system.controller;
 
-import com.pos.exceptions.UserException;
+import com.pos.system.exceptions.UserException;
 import com.pos.system.configuration.JwtProvider;
 import com.pos.system.payload.dto.UserDto;
 import com.pos.system.payload.response.AuthResponse;
 import com.pos.system.repository.UserRepository;
 import com.pos.system.service.AuthService;
-import com.pos.system.service.impl.AuthServiceImpl;
 import com.pos.system.service.impl.CustomUserImplamantation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

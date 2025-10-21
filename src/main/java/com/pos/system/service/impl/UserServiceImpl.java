@@ -1,6 +1,6 @@
 package com.pos.system.service.impl;
 
-import com.pos.exceptions.UserException;
+import com.pos.system.exceptions.UserException;
 import com.pos.system.Modal.User;
 import com.pos.system.configuration.JwtProvider;
 import com.pos.system.repository.UserRepository;

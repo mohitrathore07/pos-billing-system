@@ -1,4 +1,4 @@
-package com.pos.exceptions;
+package com.pos.system.exceptions;
 
 public class UserException extends RuntimeException {
     public UserException(String message) {
