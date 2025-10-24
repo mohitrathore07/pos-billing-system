@@ -1,6 +1,7 @@
 package com.pos.system.Modal;
 
 import jakarta.persistence.*;
+
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -25,11 +26,14 @@ public class Product {
 
     private String description;
 
+    @ManyToOne
+    private Category category;
+
     @Column(nullable = false)
     private Double mrp;
 
    @Column(nullable = false)
-    private Double sellingPrice;
+   private Double sellingPrice;
 
    private String brand;
 
