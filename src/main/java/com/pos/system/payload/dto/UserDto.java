@@ -23,7 +23,9 @@ public class UserDto {
     private String phone;
 
     private UserRole role;
-
+    private Long branchId;
+    private Long storeId;
+    private BranchDto branch;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime lastLogin;
